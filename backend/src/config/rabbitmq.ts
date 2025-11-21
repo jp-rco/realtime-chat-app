@@ -14,3 +14,7 @@ export function getChannel() {
   if (!channel) throw new Error("Channel not initialized");
   return channel;
 }
+export function mq() {
+  throw new Error("Function not implemented.");
+}
+

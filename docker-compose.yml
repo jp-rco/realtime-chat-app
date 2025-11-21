@@ -1,0 +1,37 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: chatuser
+      POSTGRES_PASSWORD: chatpass
+      POSTGRES_DB: chatdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./infra/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+
+  backend:
+    build: ./backend           # <- OJO: ./backend, no ../backend
+    env_file:
+      - .env                   # <- usa el .env de la raíz
+    depends_on:
+      - postgres
+      - rabbitmq
+    ports:
+      - "4000:4000"
+
+  frontend:
+    build: ./frontend          # <- OJO: ./frontend, no ../frontend
+    depends_on:
+      - backend
+    ports:
+      - "5173:80"

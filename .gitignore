@@ -1,0 +1,100 @@
+# =========================================
+# Node
+# =========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# =========================================
+# TypeScript
+# =========================================
+dist/
+build/
+*.tsbuildinfo
+
+# =========================================
+# Environment files
+# =========================================
+.env
+*.env
+.env.*.local
+
+# =========================================
+# Logs
+# =========================================
+logs/
+*.log
+*.log.*
+log.txt
+debug.log
+error.log
+
+# =========================================
+# Docker
+# =========================================
+docker-compose.override.yml
+docker-data/
+*.pid
+
+# =========================================
+# Coverage tests
+# =========================================
+coverage/
+.nyc_output/
+
+# =========================================
+# Frontend specific
+# =========================================
+.vite/
+.vite-ssg-cache/
+vite.config.temp.* 
+*.local
+*.cache
+*.DS_Store
+
+# =========================================
+# React
+# =========================================
+*.swp
+*.temp
+*.tmp
+
+# =========================================
+# Cache global
+# =========================================
+.cache/
+.tmp/
+.temp/
+
+# =========================================
+# OS files
+# =========================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# =========================================
+# IDEs
+# =========================================
+# VSCode
+.vscode/
+.history/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
